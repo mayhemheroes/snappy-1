@@ -9,6 +9,9 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 jobs:
   build:
+    permissions:
+      packages: write
+      contents: read
     name: ${{ matrix.os }} shared=${{ matrix.shared }} ${{ matrix.build_type }}
     runs-on: ${{ matrix.os }}
     strategy:
